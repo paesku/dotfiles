@@ -1,0 +1,82 @@
+[user]
+	name = paesku
+	email = paesku@gmail.com
+
+[core]
+	excludesfile = /Users/pascalmueller/.gitignore_global
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = [mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+
+[push]
+	default = matching
+
+[alias]
+	#############
+	b = branch
+	ba = branch -a
+	bd = branch -d
+	br = branch -r
+
+	#############
+	aa = add --all
+
+	#############
+	rb = rebase
+
+	#############
+	co = checkout
+
+	#############
+  l = log --oneline
+  lp = log --pretty=oneline
+  lg = log --oneline --graph --decorate
+  lga = log --oneline --graph --decorate --all
+
+  #############
+  c = commit
+  ca = commit -a
+  cm = commit -m
+  cam = commit -am
+
+  #############
+  ls = ls-files
+  lsf = "!git ls-files | grep -i"
+
+  #############
+  ps = push
+
+  #############
+  pl = pull
+
+  #############
+  s = status
+  sb = status -s -b
+
+
+[color]
+	ui = auto
+
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+
+[color "diff"]
+	meta = yellow reverse
+	frag = magenta
+	old = red
+	new = green
+	whitespace = red reverse
+	
+[color "status"]
+	added = green
+	changed = yellow black reverse
+	untracked = red
